@@ -1,0 +1,25 @@
+<form>
+  <label>Process changed a file creation time</label>
+  <fieldset submitButton="true">
+    <input type="time" token="field1">
+      <label></label>
+      <default>
+        <earliest>-24h@h</earliest>
+        <latest>now</latest>
+      </default>
+    </input>
+  </fieldset>
+  <row>
+    <panel>
+      <table>
+        <title>Files with Changed Times</title>
+        <search>
+          <query>index=windows source=XmlWinEventLog:Microsoft-Windows-Sysmon/Operational event_id=2 | table host, file_name, file_path, process_name</query>
+          <earliest>$field1.earliest$</earliest>
+          <latest>$field1.latest$</latest>
+        </search>
+        <option name="drilldown">none</option>
+      </table>
+    </panel>
+  </row>
+</form>

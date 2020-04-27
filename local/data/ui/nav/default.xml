@@ -1,0 +1,45 @@
+<nav search_view="search">
+   <view name="search" default='true' />
+	<collection label="Events 1-7">
+      <view name="process_creation_overview" />
+      <view name="process_changed_a_file_creation_time" />
+      
+      <view name="network_connection" />
+      <view name="sysmon_service_state_changed" />
+      <view name="process_terminated" />
+      <view name="driver_loaded" />
+      <view name="image_loaded" />
+	</collection>
+  	<collection label="Events 8-14">
+      <view name="create_remote_thread"/>
+      <view name="raw_access_read" />
+
+  	  <view name="process_access" />
+      <view name="file_create" />
+      <view name="registry_event" />
+      <view name="raw_access_read" />
+     
+  </collection>
+  
+  	<collection label="Events 15-21">
+       <view name="file_create_stream_hash" />
+ 	   <view name="pipe_created" />
+       <view name="pipe_connected" />
+       <view name="wmieventfilter_activity_detected" />
+       <view name="wmieventconsumer_activity_detected" />
+	   <view name="wmieventconsumertofilter_activity_detected" />
+       <view name="dns_event" />
+       
+  	</collection>
+  
+ 
+  
+   <collection label="Splunk">
+	<view name="search"  label="Search"/>
+  	<view name="pivot" />
+ 	<view name="reports" />
+  	<view name="alerts" />
+  	<view name="dashboards" />
+  
+  </collection>
+</nav>

@@ -1,0 +1,88 @@
+<form>
+  <label>Process Creation Overview</label>
+  <fieldset submitButton="true">
+    <input type="time" token="field1">
+      <label></label>
+      <default>
+        <earliest>-24h@h</earliest>
+        <latest>now</latest>
+      </default>
+    </input>
+  </fieldset>
+  <row>
+    <panel>
+      <title>By Host</title>
+      <chart>
+        <search>
+          <query>index=windows source=XmlWinEventLog:Microsoft-Windows-Sysmon/Operational event_id=1 | stats count by host_name</query>
+          <earliest>$field1.earliest$</earliest>
+          <latest>$field1.latest$</latest>
+        </search>
+        <option name="charting.chart">pie</option>
+        <option name="charting.drilldown">none</option>
+      </chart>
+    </panel>
+    <panel>
+      <title>By File Company</title>
+      <chart>
+        <search>
+          <query>index=windows source=XmlWinEventLog:Microsoft-Windows-Sysmon/Operational event_id=1 | stats count by file_company</query>
+          <earliest>$field1.earliest$</earliest>
+          <latest>$field1.latest$</latest>
+        </search>
+        <option name="charting.chart">pie</option>
+        <option name="charting.drilldown">none</option>
+      </chart>
+    </panel>
+    <panel>
+      <title>File Description</title>
+      <chart>
+        <search>
+          <query>index=windows source=XmlWinEventLog:Microsoft-Windows-Sysmon/Operational event_id=1 | stats count by file_description</query>
+          <earliest>$field1.earliest$</earliest>
+          <latest>$field1.latest$</latest>
+        </search>
+        <option name="charting.chart">pie</option>
+        <option name="charting.drilldown">none</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>File Name</title>
+      <chart>
+        <search>
+          <query>index=windows source=XmlWinEventLog:Microsoft-Windows-Sysmon/Operational event_id=1 | stats count by original_file_name</query>
+          <earliest>$field1.earliest$</earliest>
+          <latest>$field1.latest$</latest>
+        </search>
+        <option name="charting.chart">pie</option>
+        <option name="charting.drilldown">none</option>
+      </chart>
+    </panel>
+    <panel>
+      <title>User</title>
+      <chart>
+        <search>
+          <query>index=windows source=XmlWinEventLog:Microsoft-Windows-Sysmon/Operational event_id=1 | stats count by user_name</query>
+          <earliest>$field1.earliest$</earliest>
+          <latest>$field1.latest$</latest>
+        </search>
+        <option name="charting.chart">pie</option>
+        <option name="charting.drilldown">none</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <table>
+        <search>
+          <query>index=windows source=XmlWinEventLog:Microsoft-Windows-Sysmon/Operational event_id=1 | stats count by cmdline | sort - count</query>
+          <earliest>$field1.earliest$</earliest>
+          <latest>$field1.latest$</latest>
+        </search>
+        <option name="drilldown">none</option>
+      </table>
+    </panel>
+  </row>
+</form>

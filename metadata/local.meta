@@ -1,0 +1,108 @@
+[app/ui]
+version = 8.0.1
+modtime = 1587307407.025698900
+
+[app/launcher]
+version = 8.0.1
+modtime = 1587307407.034699100
+
+[nav/default]
+version = 8.0.1
+modtime = 1587356993.418750800
+
+[views/process_creation_overview]
+owner = admin
+version = 8.0.1
+modtime = 1587357725.339093800
+
+[views/process_changed_a_file_creation_time]
+owner = admin
+version = 8.0.1
+modtime = 1587358555.458764800
+
+[views/network_connection]
+owner = admin
+version = 8.0.1
+modtime = 1587358129.859138600
+
+[views/sysmon_service_state_changed]
+owner = admin
+version = 8.0.1
+modtime = 1587356092.923667200
+
+[views/process_terminated]
+owner = admin
+version = 8.0.1
+modtime = 1587356116.472593700
+
+[views/driver_loaded]
+owner = admin
+version = 8.0.1
+modtime = 1587356145.948451900
+
+[views/create_remote_thread]
+owner = admin
+version = 8.0.1
+modtime = 1587356270.596356200
+
+[views/raw_access_read]
+owner = admin
+version = 8.0.1
+modtime = 1587356318.458757200
+
+[views/process_access]
+owner = admin
+version = 8.0.1
+modtime = 1587356372.904941100
+
+[views/file_create]
+owner = admin
+version = 8.0.1
+modtime = 1587356404.626758100
+
+[views/registry_event]
+owner = admin
+version = 8.0.1
+modtime = 1587356483.371182700
+
+[views/file_create_stream_hash]
+owner = admin
+version = 8.0.1
+modtime = 1587356551.884157400
+
+[views/pipe_created]
+owner = admin
+version = 8.0.1
+modtime = 1587356604.168180800
+
+[views/pipe_connected]
+owner = admin
+version = 8.0.1
+modtime = 1587356659.883297200
+
+[views/wmieventconsumer_activity_detected]
+owner = admin
+version = 8.0.1
+modtime = 1587356758.775088900
+
+[views/wmieventfilter_activity_detected]
+access = read : [ * ], write : [ admin ]
+export = none
+owner = admin
+version = 8.0.1
+modtime = 1587356789.570405700
+
+[views/wmieventconsumertofilter_activity_detected]
+owner = admin
+version = 8.0.1
+modtime = 1587356796.526995800
+
+[views/dns_event]
+owner = admin
+version = 8.0.1
+modtime = 1587356842.061299700
+
+[indexes/windows]
+owner = admin
+version = 8.0.1
+modtime = 1587445545.161216900

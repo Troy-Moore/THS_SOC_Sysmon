@@ -1,0 +1,50 @@
+<form>
+  <label>Network Connection</label>
+  <fieldset submitButton="true">
+    <input type="time" token="field1">
+      <label></label>
+      <default>
+        <earliest>-24h@h</earliest>
+        <latest>now</latest>
+      </default>
+    </input>
+  </fieldset>
+  <row>
+    <panel>
+      <title>Process</title>
+      <chart>
+        <search>
+          <query>index=windows source=XmlWinEventLog:Microsoft-Windows-Sysmon/Operational event_id=3 | stats count by process_exec</query>
+          <earliest>$field1.earliest$</earliest>
+          <latest>$field1.latest$</latest>
+        </search>
+        <option name="charting.chart">pie</option>
+        <option name="charting.drilldown">none</option>
+      </chart>
+    </panel>
+    <panel>
+      <title>Source IP</title>
+      <chart>
+        <search>
+          <query>index=windows source=XmlWinEventLog:Microsoft-Windows-Sysmon/Operational event_id=3 | stats count by src_ip</query>
+          <earliest>$field1.earliest$</earliest>
+          <latest>$field1.latest$</latest>
+        </search>
+        <option name="charting.chart">pie</option>
+        <option name="charting.drilldown">none</option>
+      </chart>
+    </panel>
+    <panel>
+      <title>Destination IP</title>
+      <chart>
+        <search>
+          <query>index=windows source=XmlWinEventLog:Microsoft-Windows-Sysmon/Operational event_id=3 | stats count by dest_ip</query>
+          <earliest>$field1.earliest$</earliest>
+          <latest>$field1.latest$</latest>
+        </search>
+        <option name="charting.chart">pie</option>
+        <option name="charting.drilldown">none</option>
+      </chart>
+    </panel>
+  </row>
+</form>
